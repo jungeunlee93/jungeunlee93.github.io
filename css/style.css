@@ -12,6 +12,22 @@
 .icon-block .material-icons {
 	font-size: inherit;
 }
+/* Section */
+.section-title {
+	font-size: 3rem;	
+	font-weight: 700;
+	line-height: 3rem;
+}
+
+.section-padding {
+	padding-top: 1.5rem;
+}
+
+.about-me-description {
+	font-size: 1.25rem;
+    line-height: 1.6rem;
+    font-weight: 300;
+}
 
 /* Publications */
 .publicaion-description {
