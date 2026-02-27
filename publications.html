@@ -87,7 +87,7 @@
             background-color: var(--nav-hover); 
             border-color: var(--nav-hover);
         }
-        
+
         footer { margin-top: 80px; padding: 40px 0; border-top: 1px solid #eee; text-align: center; }
 
         .material-symbols-outlined {
@@ -122,7 +122,7 @@
 
     <div class="year-header">2025</div>
     <div class="pub-row">
-        <div class="pub-image"><img src="figure/publish/[J5]Simultaneous.png" alt="npjFE"></div>
+        <div class="pub-image"><img src="figure/publish/[J5]Simultaneous.PNG" alt="npjFE"></div>
         <div class="pub-info">
             <span class="pub-title">[J5] Simultaneous decoding of static, dynamic, and thermal tactile stimuli by using pulsed spike signals in ion-electronic skin</span>
             <div class="pub-authors"> Hyeongseok Choi, <span class="author-bold">Jungeun Lee</span>, Seungmoon Choi, Taeyeong Kim, Unyong Jeong.</div>
@@ -196,7 +196,7 @@
 
     <div class="year-header">2022</div>
     <div class="pub-row">
-        <div class="pub-image"><img src="figure/publish/[P1]MMGrip.png" alt="SiggraphAsia22"></div>
+        <div class="pub-image"><img src="figure/publish/[P1]MMGrip.PNG" alt="SiggraphAsia22"></div>
         <div class="pub-info">
             <span class="pub-title">[P1] MMGrip: A Handheld Multimodal Haptic Device Combining Vibration, Impact, and Shear for Realistic Expression of Contact</span>
             <div class="pub-authors">Dong-Geun Kim, <span class="author-bold">Jungeun Lee</span>, and Seungmoon Choi.</div>
@@ -238,6 +238,14 @@
     <p style="font-size: 0.85rem; color: #888;">© 2026 Jungeun Lee. All rights reserved.</p>
 </footer>
 
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        document.querySelectorAll('i-icon').forEach(el => {
+            const name = el.getAttribute('name');
+            el.outerHTML = `<span class="material-symbols-outlined">${name}</span>`;
+        });
+    });
+</script>
 
 </body>
 </html>
