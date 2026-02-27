@@ -14,8 +14,7 @@
             --nav-text: #fff;
             --nav-active: #00B4D8;
             --nav-hover: #0077B6;
-            --venue-blue: #0891B2;
-            --award-orange: #D69E2E;
+            --header-color: #2c3e50;
         }
 
         body { 
@@ -23,7 +22,7 @@
             line-height: 1.6; 
             margin: 0; 
             padding: 0; 
-            color: #000; 
+            color: #333; 
         }
 
         nav {
@@ -33,6 +32,7 @@
             top: 0;
             z-index: 1000;
         }
+
         .nav-container {
             max-width: 1000px;
             margin: 0 auto;
@@ -42,7 +42,7 @@
             align-items: center;
         }
         .nav-logo a { 
-            color: var(--nav-text); text-decoration: none; font-weight: 700; 
+            color: var(--nav-text); text-decoration: none; font-weight: bold; 
             font-size: 1.3rem; letter-spacing: 0.5px; text-transform: uppercase; 
         }
         .nav-links { display: flex; gap: 30px; }
@@ -52,38 +52,43 @@
         }
         .nav-links a:hover, .nav-links a.active { color: var(--nav-active); }
 
-        .container { max-width: 1000px; margin: 60px auto; padding: 0 20px; }
-        .year-header { font-size: 2.8rem; font-weight: 700; margin: 60px 0 30px; border-bottom: 2px solid #eee; }
+        .container { max-width: 950px; margin: 60px auto; padding: 0 20px; }
+        header { display: flex; align-items: flex-start; gap: 50px; margin-bottom: 60px; flex-wrap: wrap; }
+        .profile-img { width: 240px; height: 240px; border-radius: 50%; object-fit: cover; flex-shrink: 0; border: 1px solid #eee; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .bio-text { flex: 1; min-width: 320px; }
+        .bio-text h1 { margin: 0 0 15px 0; font-size: 2.8rem; color: var(--header-color); font-weight: 700; }
+        .bio-text p { margin: 8px 0; font-size: 1.1rem; color: #555; text-align: justify; }
 
-        .pub-row { display: flex; gap: 40px; margin-bottom: 50px; align-items: flex-start; }
-        .pub-image { width: 300px; flex-shrink: 0; border: 1px solid #eee; }
-        .pub-image img { width: 100%; display: block; }
+        section { margin-top: 40px; }
+        h2 { font-size: 1.8rem; border-bottom: 2px solid var(--header-color); padding-bottom: 10px; color: var(--header-color); margin-bottom: 25px; font-weight: 700; }
+        #news p { margin: 14px 0; font-size: 1.05rem; }
         
-        .pub-info { flex: 1; }
-        .pub-title { font-size: 1.25rem; font-weight: 700; margin-bottom: 12px; display: block; line-height: 1.3; }
-        .pub-authors { color: #555; margin-bottom: 5px; font-size: 1.05rem; }
-        .author-bold { font-weight: 700; text-decoration: underline; }
-        .pub-venue { color: var(--venue-blue); font-weight: 700; font-size: 1.05rem; margin-bottom: 12px; }
-        .award-text { color: var(--award-orange); font-weight: 700; }
+        .blue { color: #4db8ff !important; }
+        .orange { color: #ed7d31 !important; }
+        
+        .social-links { 
+            display: flex; 
+            flex-wrap: wrap;
+            gap: 10px; 
+            margin-top: 25px; 
+        }
 
-        .pub-links { display: flex; gap: 10px; margin-top: 10px; }
-
-        .pub-links a { 
+        .social-links a { 
             text-decoration: none !important;
             display: inline-flex; 
             align-items: center; 
             gap: 6px; 
-            padding: 5px 14px;
+            padding: 6px 14px;
             background-color: var(--nav-active); 
             border: 1px solid var(--nav-active);
             border-radius: 6px; 
-            font-size: 0.85rem; 
+            font-size: 0.9rem; 
             font-weight: 700; 
             color: #fff !important; 
             transition: all 0.2s ease;
         }
 
-        .pub-links a:hover { 
+        .social-links a:hover { 
             background-color: var(--nav-hover); 
             border-color: var(--nav-hover);
         }
@@ -91,9 +96,9 @@
         footer { margin-top: 80px; padding: 40px 0; border-top: 1px solid #eee; text-align: center; }
         
         .material-symbols-outlined {
-            font-size: 1.2rem;
+            font-size: 1.25rem;
             vertical-align: middle;
-            color: inherit; 
+            color: inherit;
         }
     </style>
 </head>
@@ -103,135 +108,75 @@
     <div class="nav-container">
         <div class="nav-logo"><a href="index.html">Jungeun Lee</a></div>
         <div class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="publications.html" class="active">Publications</a>
+            <a href="index.html" class="active">Home</a>
+            <a href="publications.html">Publications</a>
         </div>
     </div>
 </nav>
 
 <div class="container">
-    <div class="year-header">2026</div>
-    <div class="pub-row">
-        <div class="pub-image"><img src="figure/publish/[J6]Investigating.png" alt="IJHCI"></div>
-        <div class="pub-info">
-            <span class="pub-title">[J6] Investigating Luxuriousness of Steering Wheel Vibration Warning</span>
-            <div class="pub-authors"> Kimin Kwon, Sung H. Han, Seungmoon Choi, Beomyoung Jeong, Jeongwoo Kim, <span class="author-bold">Jungeun Lee</span>, Dong-Geun Kim, and Wonseok Lee.</div>
-            <div class="pub-venue">International Journal of Human-Computer Interaction <i>(Accepted)</i></div>
-        </div>
-    </div>
+    <header>
+        <img src="figure/profile/main.jpg" alt="Jungeun Lee" class="profile-img">
+        <div class="bio-text">
+            <h1>Welcome!</h1>
+            <p>
+                I am Jungeun Lee, a Ph.D. candidate in the department of Convergence IT Engineering at POSTECH advised by Seungmoon Choi.
+                <br>
+                My research centers on Human-Robot Interaction and motor learning, with a focus on haptic guidance to facilitate effective robot teleoperation.
+                Beyond guidance, I am interested in creating new interaction methods and haptic devices to enhance user experience in Virtual Reality.
+                <br>
+                As I approach the final stage of my doctoral journey, I am looking forward to transitioning into new research opportunities starting in 2027. I am open to both academic and industrial roles, so please feel free to reach out to me via email for potential collaborations or opportunities.
+            </p>
 
-    <div class="year-header">2025</div>
-    <div class="pub-row">
-        <div class="pub-image"><img src="figure/publish/[J5]Simultaneous.png" alt="npjFE"></div>
-        <div class="pub-info">
-            <span class="pub-title">[J5] Simultaneous decoding of static, dynamic, and thermal tactile stimuli by using pulsed spike signals in ion-electronic skin</span>
-            <div class="pub-authors"> Hyeongseok Choi, <span class="author-bold">Jungeun Lee</span>, Seungmoon Choi, Taeyeong Kim, Unyong Jeong.</div>
-            <div class="pub-venue">npj Flexible Electronics</div>
-            <div class="pub-links">
-                <a href="https://www.nature.com/articles/s41528-025-00490-9" target="_blank"><i-icon name="article"></i-icon> Paper</a>
+            <div class="social-links">
+                <a href="mailto:jungeunlee@postech.ac.kr"><i-icon name="mail"></i-icon> Email</a>
+                <a href="https://drive.google.com/file/d/1mYFWWyCQ3fTV5cFCMNo3IhD9A-1FP_5g/view" target="_blank"><i-icon name="description"></i-icon> CV</a>
+                <a href="https://scholar.google.com/citations?user=-OF7c5gwlkkC&hl=en" target="_blank"><i-icon name="school"></i-icon> Scholar</a>
+                <a href="https://linkedin.com/in/jungeun-lee-43036521a/" target="_blank"><i-icon name="share"></i-icon> LinkedIn</a>
             </div>
         </div>
-    </div>
-    <div class="pub-row">
-        <div class="pub-image"><img src="figure/publish/[C2]SkinHaptics.png" alt="CHI25"></div>
-        <div class="pub-info">
-            <span class="pub-title">[C2] SkinHaptics: Exploring Skin Softness Perception and Virtual Body Embodiment Techniques to Enhance Self-Haptic Interactions</span>
-            <div class="pub-authors"><span class="author-bold">Jungeun Lee</span>, Minha Jeon, Jinyoung Lee, Seungmoon Choi, and Seungjae Oh.</div>
-            <div class="pub-venue">ACM Conference on Human Factors in Computing Systems (CHI)</div>
-            <div class="pub-links">
-                <a href="https://dl.acm.org/doi/full/10.1145/3706598.3713891" target="_blank"><i-icon name="article"></i-icon> Paper</a>
-                <a href="https://www.youtube.com/watch?v=FNAL2OLkwdI" target="_blank"><i-icon name="video_library"></i-icon> Video</a>
-            </div>
-        </div>
-    </div>
+    </header>
 
-    <div class="year-header">2024</div>
-    <div class="pub-row">
-        <div class="pub-image"><img src="figure/publish/[J4]Multimodal.png" alt="TOH24"></div>
-        <div class="pub-info">
-            <span class="pub-title">[J4] Multimodal Haptic Feedback for Virtual Collisions Combining Vibrotactile and Electrical Muscle Stimulation</span>
-            <div class="pub-authors"><span class="author-bold">Jungeun Lee</span> and Seungmoon Choi.</div>
-            <div class="pub-venue">IEEE Transactions on Haptics</div>
-            <div class="pub-links">
-                <a href="https://ieeexplore.ieee.org/abstract/document/10400864" target="_blank"><i-icon name="article"></i-icon> Paper</a>
-            </div>
-        </div>
-    </div>
-    <div class="pub-row">
-        <div class="pub-image"><img src="figure/publish/[J3]Sound.png" alt="TOH24_Sound"></div>
-        <div class="pub-info">
-            <span class="pub-title">[J3] Sound-to-touch crossmodal pitch matching for short sounds</span>
-            <div class="pub-authors">Dong-Geun Kim, <span class="author-bold">Jungeun Lee</span>, and Seungmoon Choi.</div>
-            <div class="pub-venue">IEEE Transactions on Haptics. <span class="award-text">(Best Short Paper Candidate)</span></div>
-            <div class="pub-links">
-                <a href="https://ieeexplore.ieee.org/abstract/document/10337769" target="_blank"><i-icon name="article"></i-icon> Paper</a>
-            </div>
-        </div>
-    </div>
+    <section id="news">        
+        <h2>News</h2>
+        <p>
+            <strong>Jan. 2026 |</strong>
+            One paper was accpeted at IJHCI.
+            <a href="https://youtu.be/uXlJCYZuc6I?t=100" target="_blank"><i-icon name="video_library" color="blue"></i-icon></a>
+        </p>
+        <p><strong>Dec. 2025 |</strong> I passed PhD candidacy.</p>
+        
+        <p>
+            <strong>Nov. 2025 |</strong>
+            A paper published in npj Flexible Electronics.
+            <a href="https://www.nature.com/articles/s41528-025-00490-9" target="_blank"><i-icon name="article" color="blue"></i-icon></a>
+        </p>
 
-    <div class="year-header">2023</div>
-    <div class="pub-row">
-        <div class="pub-image"><img src="figure/publish/[J4]Multimodal.png" alt="WHC23"></div>
-        <div class="pub-info">
-            <span class="pub-title">[D1] Multimodal Haptic Feedback for Virtual Collisions Combining Vibration and Electrical Muscle Stimulation</span>
-            <div class="pub-authors"><span class="author-bold">Jungeun Lee</span>, and Seungmoon Choi.</div>
-            <div class="pub-venue">IEEE World Haptics Conference (WHC)</div>
-            <div class="pub-links">
-                <a href="https://www.youtube.com/watch?v=sQ9E-dFdT08" target="_blank"><i-icon name="video_library"></i-icon> Video</a>
-            </div>
-        </div>
-    </div>
-    <div class="pub-row">
-        <div class="pub-image"><img src="figure/publish/[C1]Generating.png" alt="CHI23"></div>
-        <div class="pub-info">
-            <span class="pub-title">[C1] Generating Real‐Time, Selective, and Multimodal Haptic Effects from Sound for Gaming Experience Enhancement</span>
-            <div class="pub-authors">Gyeore yun, Minjae Mun, <span class="author-bold">Jungeun Lee</span>, Dong-Geun Kim, Hong Z. Tan, and Seungmoon Choi.</div>
-            <div class="pub-venue">ACM Conference on Human Factors in Computing Systems (CHI)</div>
-            <div class="pub-links">
-                <a href="https://dl.acm.org/doi/full/10.1145/3544548.3580787" target="_blank"><i-icon name="article"></i-icon> Paper</a>
-                <a href="https://www.youtube.com/watch?v=TYE560GHJTw" target="_blank"><i-icon name="video_library"></i-icon> Video</a>
-            </div>
-        </div>
-    </div>
+        <p>
+            <strong>Jul. 2025 |</strong>
+            One paper was demonstrated at WHC 2025.
+            <a href="https://youtu.be/uXlJCYZuc6I?t=100" target="_blank"><i-icon name="video_library" color="blue"></i-icon></a>
+        </p>
 
-    <div class="year-header">2022</div>
-    <div class="pub-row">
-        <div class="pub-image"><img src="figure/publish/[P1]MMGrip.png" alt="SiggraphAsia22"></div>
-        <div class="pub-info">
-            <span class="pub-title">[P1] MMGrip: A Handheld Multimodal Haptic Device Combining Vibration, Impact, and Shear for Realistic Expression of Contact</span>
-            <div class="pub-authors">Dong-Geun Kim, <span class="author-bold">Jungeun Lee</span>, and Seungmoon Choi.</div>
-            <div class="pub-venue">ACM SIGGRAPH Asia 2022 Posters</div>
-            <div class="pub-links">
-                <a href="https://dl.acm.org/doi/abs/10.1145/3550082.3564177" target="_blank"><i-icon name="article"></i-icon> Paper</a>
-            </div>
-        </div>
-    </div>
+        <p>
+            <strong>Feb. 2025 |</strong>
+            A demonstartion for SkinHaptics has been accepted to CHI 2025 Interactivity.
+            <a href="https://dl.acm.org/doi/full/10.1145/3706599.3721275" target="_blank"><i-icon name="article" color="blue"></i-icon></a>
+        </p>
 
-    <div class="year-header">2021</div>
-    <div class="pub-row">
-        <div class="pub-image"><img src="figure/publish/[J2]Patient-specific.png" alt="JIMR"></div>
-        <div class="pub-info">
-            <span class="pub-title">[J2] Patient‑specific functional electrical stimulation strategy based on muscle synergy and walking posture analysis for gait rehabilitation of stroke patients</span>
-            <div class="pub-authors">Junghwan Lim, Taehyun Lim, <span class="author-bold">Jungeun Lee</span>, Hyungjun Chang, Bumchul Yoon, and Hoeryong Jung.</div>
-            <div class="pub-venue">Journal of International Medical Research</div>
-            <div class="pub-links">
-                <a href="https://journals.sagepub.com/doi/abs/10.1177/03000605211016782" target="_blank"><i-icon name="article"></i-icon> Paper</a>
-            </div>
-        </div>
-    </div>
-
-    <div class="year-header">2020</div>
-    <div class="pub-row">
-        <div class="pub-image"><img src="figure/publish/[J1]Electrically.png" alt="Sensors20"></div>
-        <div class="pub-info">
-            <span class="pub-title">[J1] Electrically elicited force response characteristics of forearm extensor muscles for electrical muscle stimulation-based haptic rendering</span>
-            <div class="pub-authors"><span class="author-bold">Jungeun Lee</span>, Yeongjin Kim, and Hoeryong Jung.</div>
-            <div class="pub-venue">Sensors</div>
-            <div class="pub-links">
-                <a href="https://www.mdpi.com/1424-8220/20/19/5669" target="_blank"><i-icon name="article"></i-icon> Paper</a>
-            </div>
-        </div>
-    </div>
+        <p>
+            <strong>Jan. 2025 |</strong>
+            A paper has been conditionally accepted to CHI 2025.
+            <a href="https://dl.acm.org/doi/full/10.1145/3706598.3713891" target="_blank"><i-icon name="article" color="blue"></i-icon></a>
+            <a href="https://www.youtube.com/watch?v=FNAL2OLkwdI&t=2s" target="_blank"><i-icon name="video_library" color="blue"></i-icon></a>
+        </p>
+        
+        <p>
+            <strong>Jun. 2024 |</strong>
+            My research proposal has been selected as beneficiaries of the NRF Fellowship Grants for Ph.D. Studies (한국연구재단 박사과정생연구장려금지원).
+            <i-icon name="trophy" color="orange"></i-icon>
+        </p>
+    </section>
 </div>
 
 <footer>
@@ -242,7 +187,8 @@
     document.addEventListener("DOMContentLoaded", function() {
         document.querySelectorAll('i-icon').forEach(el => {
             const name = el.getAttribute('name');
-            el.outerHTML = `<span class="material-symbols-outlined">${name}</span>`;
+            const colorClass = el.getAttribute('color') || '';
+            el.outerHTML = `<span class="material-symbols-outlined ${colorClass}">${name}</span>`;
         });
     });
 </script>
